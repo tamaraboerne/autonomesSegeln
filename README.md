@@ -34,13 +34,8 @@ Dieses Repository enthält den Code für das **autonome Landsegler-Fahrzeug Clif
 - Echtzeit-Monitoring und Analyse über Frontend  
 - Sammlung von Telemetrie-Daten zur Optimierung der Regelalgorithmen  
 
-## Projektstruktur (Beispiel)
+## Projektstruktur 
 ├─ autopilot/ # Embedded Code für Clifton
 ├─ laptop/ # Code für Laptop / Telemetrie & Steuerung
 ├─ frontend/ # GUI / Visualisierung
 └─ README.md
-
-## Kontakt
-- **Autorin:** Tamara Boerner  
-- **Projekt:** Autonomes Segeln – Clifton Autopilot  
-- **Hochschule:** TH Lübeck, Studiengang Informatik/Softwaretechnik
