@@ -1,0 +1,111 @@
+#!/bin/sh
+#
+# sand yacht Clifton default parameters.
+#
+# NOTE: Script variables are declared/initialized/unset in the rcS script.
+#
+
+set VEHICLE_TYPE rover_sand_yacht_clifton
+
+# MAV_TYPE_GROUND_ROVER 10
+param set-default MAV_TYPE 10
+
+# necessary?
+#---
+param set-default MIS_TAKEOFF_ALT 0.01
+
+param set-default NAV_ACC_RAD 2
+param set-default NAV_LOITER_RAD 2
+
+# Temporary.
+param set-default NAV_FW_ALT_RAD 1000
+#---
+
+
+param set-default CA_AIRFRAME 16
+
+param set-default BAT1_N_CELLS 3
+
+# turn off any battery checks
+param set-default CBRK_SUPPLY_CHK 894281
+param set-default BAT_CRIT_THR 0.0
+param set-default BAT_EMERGEN_THR 0.0
+param set-default BAT_LOW_THR 0.0
+
+## setup GPS uBlox F9P (automatic detection)
+# param set-default SER_GPS1_BAUD 0
+
+# setup dual GPS UM982
+param set-default SER_GPS1_BAUD 230400
+
+# enable dual GPS heading into yaw estimation (+8)
+param set-default EKF2_GPS_CTRL 15
+
+# disable magnetometer in EKF2
+param set-default EKF2_MAG_TYPE 5
+
+# primary antenna is in the back (right connector)
+param set-default GPS_YAW_OFFSET 180
+
+# set protocol to NMEA
+param set-default GPS_1_PROTOCOL 6
+
+param set-default SER_TEL3_BAUD 38400
+
+# param set-default NAV_ACC_RAD 0.5
+
+# set RC mapping for the brake
+param set-default RC_MAP_AUX1 12
+param set-default RC_MAP_AUX2 5
+
+# servos run with 50Hz
+param set-default PWM_MAIN_TIM0 50
+param set-default PWM_MAIN_TIM1 50
+
+# left steering
+param set-default PWM_MAIN_FUNC1 201
+param set-default PWM_MAIN_DIS1 1563
+param set-default PWM_MAIN_MIN1 1160
+param set-default PWM_MAIN_MAX1 1935
+param set-default PWM_MAIN_FAIL1 1600
+
+# right steering
+param set-default PWM_MAIN_FUNC2 202
+param set-default PWM_MAIN_DIS2 1468
+param set-default PWM_MAIN_MIN2 1095
+param set-default PWM_MAIN_MAX2 1835
+param set-default PWM_MAIN_FAIL2 1400
+
+# mainsail
+param set-default PWM_MAIN_FUNC3 203
+param set-default PWM_MAIN_DIS3 1500
+param set-default PWM_MAIN_MIN3 1000
+param set-default PWM_MAIN_MAX3 2000
+param set-default PWM_MAIN_FAIL3 1500
+
+# logging
+param set-default SDLOG_MODE 2
+
+# disable disarm timeout
+param set-default COM_DISARM_PRFLT -1.0
+
+# set dynamic model to automotive
+param set-default GPS_UBX_DYNMODEL 4
+
+# power saving
+param set-default PWM_MAIN_TIM2 50
+param set-default PWM_AUX_TIM0 50
+param set-default PWM_AUX_TIM1 50
+param set-default PWM_AUX_TIM2 50
+
+# disable geofencing
+param set-default GF_ACTION 0
+param set-default CP_DIST -1
+
+# disable unused sensors
+param set-default SYS_HAS_BARO 0
+param set-default SYS_CAL_BARO 0
+param set-default SYS_HAS_MAG 0
+param set-default SYS_HAS_NUM_DIST 0
+param set-default SYS_CAL_ACCEL 0
+param set-default SYS_CAL_GYRO 0

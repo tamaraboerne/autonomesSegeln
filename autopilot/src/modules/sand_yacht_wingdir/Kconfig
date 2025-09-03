@@ -1,0 +1,12 @@
+menuconfig MODULES_SAND_YACHT_WINGDIR
+	bool "sand_yacht_winggir"
+	default n
+	---help---
+		Enable support for sand_yacht_wingdir
+
+menuconfig USER_SAND_YACHT_WINGDIR
+	bool "sand_yacht_wingdir running as userspace module"
+	default y
+	depends on BOARD_PROTECTED && MODULES_SAND_YACHT_WINGDIR
+	---help---
+		Put sand_yacht_wingdir in userspace memory

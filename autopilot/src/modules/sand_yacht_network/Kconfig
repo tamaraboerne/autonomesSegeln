@@ -1,0 +1,12 @@
+menuconfig MODULES_SAND_YACHT_NETWORK
+	bool "sand_yacht_network"
+	default n
+	---help---
+		Enable support for sand_yacht_network
+
+menuconfig USER_SAND_YACHT_NETWORK
+	bool "sand_yacht_network running as userspace module"
+	default y
+	depends on BOARD_PROTECTED && MODULES_SAND_YACHT_NETWORK
+	---help---
+		Put sand_yacht_network in userspace memory

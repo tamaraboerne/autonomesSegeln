@@ -1,0 +1,10 @@
+menu "Wind"
+    menuconfig COMMON_WIND
+        bool "Wind sensors"
+        default n
+        select DRIVERS_WIND_SPEED
+        select DRIVERS_WIND_DIRECTION
+        ---help---
+            Enable default set of wind sensors
+    rsource "*/Kconfig"
+endmenu #Wind

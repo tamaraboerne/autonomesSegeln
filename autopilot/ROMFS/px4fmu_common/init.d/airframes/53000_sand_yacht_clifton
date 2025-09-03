@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# @name Sand Yacht Clifton
+#
+# @type Rover
+# @class Rover
+#
+# @output Servo1 steering left
+# @output Servo2 steering right
+# @output Servo3 mainsail
+#
+# @maintainer Michael BREUKER <michael.breuker@th-luebeck.de>
+#
+
+. ${R}etc/init.d/rc.rover_sand_yacht_clifton_defaults

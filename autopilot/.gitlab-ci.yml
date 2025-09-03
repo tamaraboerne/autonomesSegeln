@@ -1,0 +1,42 @@
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+  GIT_DEPTH: 0
+
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  image: ubuntu:22.04
+  script:
+    - ./Tools/setup/ubuntu.sh
+    - git fetch --tags
+    - make px4_fmu-v6c
+  artifacts:
+    paths:
+      - build
+    expire_in: "30 days"
+
+unit-tests:
+  stage: test
+  needs: []
+  image: ubuntu:22.04
+  script:
+    - ./Tools/setup/ubuntu.sh
+    - git fetch --tags
+    - make tests TESTFILTER=unit
+
+
+# werden wir höchtwarscheinlich nie selber welche schreiben, aber
+# testen ist sicherlich trotzdem sinnvoll um nichts bestehendes kaputt zu machen
+simulation-tests:
+  stage: test
+  needs: []
+  image: ubuntu:22.04
+  script:
+    - ./Tools/setup/ubuntu.sh
+    - git fetch --tags
+    - make tests TESTFILTER=sitl
+

@@ -1,0 +1,29 @@
+stages:
+  - build
+  - test
+
+default:
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - .m2/repository
+
+build:
+  stage: build
+  image: maven:latest
+  script:
+    - mvn install -DskipTests
+
+test:
+  stage: test
+  image: maven:latest
+  script:
+    - mvn test
+  artifacts:
+    name: "Maven artifacts from $CI_PROJECT_NAME on $CI_COMMIT_REF_SLUG"
+    when: always
+    reports:
+      junit: target/surefire-reports/TEST-*.xml
+    paths:
+      - target/
+    expire_in: 1 week

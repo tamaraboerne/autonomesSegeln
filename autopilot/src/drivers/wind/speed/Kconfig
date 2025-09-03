@@ -1,0 +1,5 @@
+menuconfig DRIVERS_WIND_SPEED
+	bool "Wind Speed"
+	default n
+	---help---
+		Enable support for wind speed

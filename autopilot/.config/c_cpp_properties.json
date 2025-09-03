@@ -1,0 +1,37 @@
+{
+    "configurations": [
+        {
+            "name": "PX4",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/platforms/nuttx/NuttX/nuttx/include/",
+                "${workspaceFolder}/platforms/nuttx/NuttX/nuttx/include/nuttx/",
+                "${workspaceFolder}/platforms/nuttx/NuttX/nuttx/include/nuttx/lib/",
+                "${workspaceFolder}/platforms/common/include/",
+                // "${workspaceFolder}/platforms/nuttx/NuttX/nuttx/include/nuttx/lib/",
+                "${workspaceFolder}/boards/px4/fmu-v6c/src/",
+                "${workspaceFolder}/platforms/nuttx/src/px4/stm/stm32h7/include/",
+                "${workspaceFolder}/src/drivers/",
+                "${workspaceFolder}/src/",
+                "${workspaceFolder}/src/lib/mathlib/",
+                "${workspaceFolder}/src/include/",
+            ],
+            "defines": [
+                "MODULE_NAME=\"Test Module\"",
+            ],
+            "macFrameworkPath": [],
+            // "configurationProvider": "ms-vscode.cmake-tools",
+            "cppStandard": "c++14",
+            "cStandard": "c11",
+            "dotConfig": "${workspaceFolder}/build/px4_fmu-v6c_default/NuttX/nuttx/.config",
+            "forcedInclude": [
+                "${workspaceFolder}/src/include/visibility.h",
+                "${workspaceFolder}/src/drivers/drv_hrt.h",
+                "${workspaceFolder}/platforms/common/include/px4_platform_common/defines.h",
+                "${workspaceFolder}/platforms/common/include/px4_platform_common/px4_config.h",
+                "${workspaceFolder}/build/px4_fmu-v6c_default/px4_boardconfig.h",
+            ]
+        }
+    ],
+    "version": 4
+}

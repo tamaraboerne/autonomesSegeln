@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# Standard apps for sand yacht Clifton.
+#
+# NOTE: Script variables are declared/initialized/unset in the rcS script.
+#
+
+#
+# Start Wind sensors
+#
+wind_direction start -X -b 4
+wind_speed start -X -b 4
+wing_direction start -X -b 4
+
+sand_yacht_windspeed start
+sand_yacht_winddir start
+sand_yacht_wingdir start
+
+
+sand_yacht_sensors start
+sand_yacht_network start
+
+#
+# Start attitude controllers.
+#
+sand_yacht_clifton_control start
+

@@ -1,0 +1,12 @@
+menuconfig MODULES_SAND_YACHT_WINDSPEED
+	bool "sand_yacht_windspeed"
+	default n
+	---help---
+		Enable support for sand_yacht_windspeed
+
+menuconfig USER_SAND_YACHT_WINDSPEED
+	bool "sand_yacht_windspeed running as userspace module"
+	default y
+	depends on BOARD_PROTECTED && MODULES_SAND_YACHT_WINDSPEED
+	---help---
+		Put sand_yacht_windspeed in userspace memory

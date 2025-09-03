@@ -1,0 +1,8 @@
+uint64 timestamp # without it doesnt compile
+
+float64 sail_speed_tolerance
+float64 sail_speed_constant
+float32 flap_step
+float64 steering_constant_p
+uint8 default_waypoint_tolerance
+uint8 curve_waypoint_tolerance

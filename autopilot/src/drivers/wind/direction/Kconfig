@@ -1,0 +1,5 @@
+menuconfig DRIVERS_WIND_DIRECTION
+	bool "Wind Direction"
+	default n
+	---help---
+		Enable support for wind direction

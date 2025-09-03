@@ -1,0 +1,5 @@
+menuconfig DRIVERS_WING_DIRECTION
+	bool "Wing Direction"
+	default n
+	---help---
+		Enable support for wing direction

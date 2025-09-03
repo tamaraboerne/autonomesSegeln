@@ -1,0 +1,13 @@
+:root {
+    /*--route-color: #2ecc71;*/
+    --route-color: #870082;
+    --route-color-done: #d36100;
+    --heading-color: #e74c3c;
+    --help-line-pattern: repeating-linear-gradient(
+            to right,
+            orange,
+            orange 4px,
+            transparent 4px,
+            transparent 8px
+    );
+}

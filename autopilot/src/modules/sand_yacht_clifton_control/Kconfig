@@ -1,0 +1,12 @@
+menuconfig MODULES_SAND_YACHT_CLIFTON_CONTROL
+	bool "sand_yacht_clifton_control"
+	default n
+	---help---
+		Enable support for sand_yacht_clifton_control
+
+menuconfig USER_SAND_YACHT_CLIFTON_CONTROL
+	bool "sand_yacht_clifton_control running as userspace module"
+	default y
+	depends on BOARD_PROTECTED && MODULES_SAND_YACHT_CLIFTON_CONTROL
+	---help---
+		Put sand_yacht_clifton_control in userspace memory

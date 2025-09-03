@@ -1,0 +1,12 @@
+menuconfig MODULES_SAND_YACHT_SENSORS
+	bool "sand_yacht_sensors"
+	default n
+	---help---
+		Enable support for sand_yacht_sensors
+
+menuconfig USER_SAND_YACHT_SENSORS
+	bool "sand_yacht_sensors running as userspace module"
+	default y
+	depends on BOARD_PROTECTED && MODULES_SAND_YACHT_SENSORS
+	---help---
+		Put sand_yacht_sensors in userspace memory

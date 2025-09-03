@@ -1,0 +1,12 @@
+menuconfig MODULES_SAND_YACHT_WINDDIR
+	bool "sand_yacht_winddir"
+	default n
+	---help---
+		Enable support for sand_yacht_winddir
+
+menuconfig USER_SAND_YACHT_SENSORS
+	bool "sand_yacht_winddir running as userspace module"
+	default y
+	depends on BOARD_PROTECTED && MODULES_SAND_YACHT_WINDDIR
+	---help---
+		Put sand_yacht_winddir in userspace memory

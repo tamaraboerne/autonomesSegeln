@@ -1,0 +1,4 @@
+[submodule "px4-autopilot"]
+	path = px4-autopilot
+	url = https://git.mylab.th-luebeck.de/autosail/px4-autopilot-2025.git
+
