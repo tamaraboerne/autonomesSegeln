@@ -1,41 +1,72 @@
-# Projekt: Autonomes Segeln – Clifton Autopilot
+# Project: Autonomous Sailing – Clifton Autopilot
 
-Dieses Repository enthält den Code für das **autonome Landsegler-Fahrzeug Clifton**. Ziel ist die selbstständige Navigation entlang vorgegebener Wegpunkte mithilfe eines aerodynamischen Segels und einer Steuerklappe (Flap). Das System besteht aus **drei Komponenten**:
+This repository contains the codebase for **Clifton**, an autonomous land‑sailing vehicle developed as a final‑semester university group project.  
+Our goal was to enable the vehicle to **navigate fully autonomously** using an aerodynamic sail, a steering flap, and a multilayer software system integrating embedded control, telemetry, and a real‑time frontend.
 
-## 1. Autopilot auf der Clifton
-- Läuft direkt auf dem Fahrzeug (STM32 / Embedded System)  
-- Steuert **Segelstellung, Flap und Kursregelung**  
-- Verantwortlich für:
-  - Zyklische Ausführung der Regelungen (`Run()`-Methode)  
-  - Flap- und Kursregelung zur Einhaltung der Route  
-  - Vortriebsregelung (Segeloptimierung)  
-  - Zustands- und Fehlercodierung (binär)  
-  - Sicherheit: Abbruch bei Grenzwerten  
+The project was developed by a team of **13 students**, divided into three sub‑teams: Autopilot, Laptop Software, and Frontend.
 
-## 2. Laptop-Software
-- Verbindung zum Autopiloten über **UART / USB / Funk**  
-- Verantwortlich für:
-  - Telemetrie-Empfang und Logging  
-  - Parametrierung des Autopiloten  
-  - Start-/Stopp-Kommandos für Testfahrten  
-- Dient als **Middleware** zwischen Fahrzeug und Frontend  
+---
 
-## 3. Frontend
-- Visualisierung und Steuerung in Echtzeit  
-- Funktionen:
-  - Anzeige von Position, Geschwindigkeit, Kurs, Flap-Stellung  
-  - Wegpunkt-Management und Missionsplanung  
-  - Statuswarnungen und Log-Analyse  
-- Kann lokal auf dem Laptop oder einem Browser ausgeführt werden  
+# 🔧 1. Autopilot on the Clifton (My Contribution)
 
-## Zielsetzung
-- Stabiler Autopilot, der autonom navigiert  
-- Optimierung von Geschwindigkeit und Kurs unter realen Bedingungen  
-- Echtzeit-Monitoring und Analyse über Frontend  
-- Sammlung von Telemetrie-Daten zur Optimierung der Regelalgorithmen  
+I was part of the **Autopilot Team** (4 members), responsible for the embedded control system running directly on the vehicle’s STM32 microcontroller.  
+This component is the “brain” of the land sailor — it performs all real‑time control tasks necessary for autonomous operation.
 
-## Projektstruktur 
-├─ autopilot/ # Embedded Code für Clifton
-├─ laptop/ # Code für Laptop / Telemetrie & Steuerung
-├─ frontend/ # GUI / Visualisierung
+### ✔ My Key Responsibilities
+- **Development on STM32 (bare‑metal / embedded C++)**
+- **Implementation of the main real‑time control loop**  
+  - Designed and implemented the core `Run()` method executed cyclically for stable control  
+- **Flap Controller**  
+  - Developed the control logic regulating the steering flap for route following  
+  - Contributed to tuning PID‑style and logic‑based controllers  
+- **Course Regulation (Heading Control)**  
+  - Implemented algorithms to keep the vehicle aligned with mission waypoints  
+- **Propulsion / Sail Optimization**  
+  - Contributed to logic determining the optimal sail angle relative to wind and course  
+- **State & Error Encoding System**  
+  - Designed binary-coded status and error flags for debugging, telemetry, and safety  
+- **Safety & Limits Management**  
+  - Implemented emergency shutdown conditions (limit angles, sensor faults, stall conditions)
+
+### ✔ Focus Areas I Worked On the Most
+- Real‑time control architecture  
+- Route following and steering flap logic  
+- Safety‑critical state handling  
+- Embedded communication interfaces shared with the laptop module  
+
+The autopilot runs independently on the vehicle and is responsible for ensuring safe, stable, and accurate autonomous movement across all mission phases.
+
+---
+
+# 💻 2. Laptop Software
+- Provides communication with the autopilot via **UART / USB / Radio**  
+- Handles telemetry, mission configuration, and parameter tuning  
+- Serves as a middleware bridge between the embedded system and frontend UI  
+
+*(Developed by another sub‑team — my collaboration was limited to defining message structures and validation rules.)*
+
+---
+
+# 🌐 3. Frontend
+- Real‑time visualization of vehicle state  
+- Map display, waypoint editing, mission planning  
+- Playback and analysis of recorded telemetry  
+
+*(Developed by a separate UI/UX-focused team.)*
+
+---
+
+# 🎯 Project Objectives
+- Build a stable, robust autonomous control system for a land‑sailing vehicle  
+- Optimize speed and heading based on environmental conditions  
+- Enable real‑time monitoring during field tests  
+- Collect and evaluate telemetry for future control improvements  
+
+---
+
+# 📁 Project Structure
+```text
+├─ autopilot/   # Embedded control system for the land sailor (my main area)
+├─ laptop/      # Telemetry + configuration middleware
+├─ frontend/    # Visual UI for monitoring and mission planning
 └─ README.md
