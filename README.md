@@ -9,8 +9,16 @@ The project was developed by a team of **13 students**, divided into three sub�
 
 # 🔧 1. Autopilot on the Clifton (My Contribution)
 
-I was part of the **Autopilot Team** (4 members), responsible for the embedded control system running directly on the vehicle’s STM32 microcontroller.  
+I was part of the **Autopilot Team** (3 members), responsible for the embedded control system running directly on the vehicle’s STM32 microcontroller.  
 This component is the “brain” of the land sailor — it performs all real‑time control tasks necessary for autonomous operation.
+
+### 🔗 My Code (Autopilot Module)
+You can find the part of the project I worked on here:
+
+👉 **Autopilot Control Module (`sand_yacht_clifton_control/`)**  
+https://github.com/tamaraboerne/autonomesSegeln/tree/main/autopilot/src/modules/sand_yacht_clifton_control
+
+---
 
 ### ✔ My Key Responsibilities
 - **Development on STM32 (bare‑metal / embedded C++)**
@@ -24,7 +32,7 @@ This component is the “brain” of the land sailor — it performs all real‑
 - **Propulsion / Sail Optimization**  
   - Contributed to logic determining the optimal sail angle relative to wind and course  
 - **State & Error Encoding System**  
-  - Designed binary-coded status and error flags for debugging, telemetry, and safety  
+  - Designed binary‑coded status and error flags for debugging, telemetry, and safety  
 - **Safety & Limits Management**  
   - Implemented emergency shutdown conditions (limit angles, sensor faults, stall conditions)
 
@@ -35,8 +43,6 @@ This component is the “brain” of the land sailor — it performs all real‑
 - Embedded communication interfaces shared with the laptop module  
 
 The autopilot runs independently on the vehicle and is responsible for ensuring safe, stable, and accurate autonomous movement across all mission phases.
-
----
 
 # 💻 2. Laptop Software
 - Provides communication with the autopilot via **UART / USB / Radio**  
