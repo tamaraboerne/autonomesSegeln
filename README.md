@@ -18,6 +18,13 @@ You can find the part of the project I worked on here:
 👉 **Autopilot Control Module (`sand_yacht_clifton_control/`)**  
 https://github.com/tamaraboerne/autonomesSegeln/tree/main/autopilot/src/modules/sand_yacht_clifton_control
 
+### 🔗 Autopilot Folder (contains all embedded code)
+👉 https://github.com/tamaraboerne/autonomesSegeln/tree/main/autopilot
+
+### 🔗 Autopilot README (if you add one)
+👉 https://github.com/tamaraboerne/autonomesSegeln/blob/main/autopilot/README.md
+
+
 ---
 
 ### ✔ My Key Responsibilities
